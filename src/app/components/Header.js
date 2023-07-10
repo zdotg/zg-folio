@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FaAlignJustify, FaBars } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import HeaderNavLink from "./HeaderNavLink";
 import MyEmoji from "../../../public/images/emoji-sticker.png";
 import styles from "./Header.module.css"; // Import the CSS module
@@ -27,17 +27,23 @@ const Header = () => {
       {" "}
       {/* Apply the CSS module class */}
       <div className="flex items-center">
-        <Link href="/">
-          <Image width={70} height={70} src={MyEmoji} className="" alt="logo" />
-          Zach Gallman
-        </Link>
+        <div className="block">
+          <div>Zach Gallman</div>
+          <Link href="/">
+            <Image
+              width={70}
+              height={70}
+              src={MyEmoji}
+              className=""
+              alt="logo"
+            />
+          </Link>
+        </div>
         <nav>
           <div className={` ${styles.menu} ${isMenuOpen ? styles.open : ""}`}>
             {" "}
             {/* Apply the CSS module classes */}
-            <ul
-              className={`flex flex-wrap sm:gap-x-0.5 text-white ${styles.menuItems}`}
-            >
+            <ul className={`flex sm:gap-x-0.5 text-white ${styles.menuItems}`}>
               {" "}
               {/* Apply the CSS module class */}
               {menuItems.map(({ url, label }, index) => (
