@@ -1,0 +1,64 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #6957cb;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s ease-in-out;
+  }
+  
+  .menu.open {
+    height: auto;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu li {
+    margin: 0.5rem 0;
+  }
+  
+  .toggle-button {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .toggle-button span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px;
+  }
+  
+  @media (max-width: 768px) {
+    .menu {
+      width: 100%;
+    }
+  
+    .toggle-button {
+      display: flex;
+    }
+  
+    .toggle-button span {
+      background-color: #6957cb;
+    }
+  }
+  
