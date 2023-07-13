@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -11,7 +9,7 @@ const HeaderNavLink = ({ href, children }) => {
     <div className="flex flex-col">
       <Link
         href={href}
-        className={`hover:bg-gray-100 p-1 text-xs rounded  ${
+        className={`hover:bg-gray-100 p-1 text-xs rounded ${
           active ||
           (href.startsWith("/dashboard") && pathname.startsWith("/dashboard"))
             ? "text-white font-semibold"

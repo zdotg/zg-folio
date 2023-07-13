@@ -1,14 +1,29 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import PortfolioNavLink from "@/app/components/PortfolioNavLink";
 
-export default function MainLayout({ children }) {
+const PortfolioLayout = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen mx-auto max-w-2xl px-4 pt-8 pb-16">
-      <div className="flex-grow">
-        <Header />
-        <main className="my-0 py-16">{children}</main>
+    <div className="flex gap-8">
+      <aside className="flex-[2]">
+        <nav>
+          <ul className="grid gap-3">
+            <li>
+              <PortfolioNavLink href="/dashboard/projects">
+                Projects
+              </PortfolioNavLink>
+            </li>
+            <li>
+              <PortfolioNavLink href="/dashboard/skills">
+                Skills
+              </PortfolioNavLink>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <div className="bg-gray-100 flex-[8] p-4 rounded min-h-[300px]">
+        {children}
       </div>
-      <Footer />
     </div>
   );
-}
+};
+
+export default PortfolioLayout;

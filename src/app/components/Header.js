@@ -1,16 +1,15 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
+import LightSwitch from "./LightSwitch";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
+
 import HeaderNavLink from "./HeaderNavLink";
-import MyEmoji from "../../../public/images/emoji-sticker.png";
 import styles from "./Header.module.css"; // Import the CSS module
 
 const menuItems = [
   { label: `Home`, url: `/` },
-  { label: `Projects`, url: `zg/projects` },
+  { label: `Portfolio`, url: `zg/portfolio` },
   { label: `Experience`, url: `zg/experience` },
   { label: `Contact`, url: `zg/contact` },
 ];
@@ -23,46 +22,28 @@ const Header = () => {
   };
 
   return (
-    <header className={styles.navbar}>
-      {" "}
-      {/* Apply the CSS module class */}
-      <div className="flex items-center">
-        <div className="block">
-          <div>Zach Gallman</div>
-          <Link href="/">
-            <Image
-              width={70}
-              height={70}
-              src={MyEmoji}
-              className=""
-              alt="logo"
-            />
-          </Link>
-        </div>
-        <nav>
-          <div className={` ${styles.menu} ${isMenuOpen ? styles.open : ""}`}>
-            {" "}
-            {/* Apply the CSS module classes */}
-            <ul className={`flex sm:gap-x-0.5 text-white ${styles.menuItems}`}>
-              {" "}
-              {/* Apply the CSS module class */}
-              {menuItems.map(({ url, label }, index) => (
-                <li key={index}>
-                  <HeaderNavLink href={url}>{label}</HeaderNavLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div
-            className={`flex justify-end ${styles.toggleButton}`}
-            onClick={toggleMenu}
-          >
-            {" "}
-            {/* Apply the CSS module class */}
-            <FaBars />
-          </div>
-        </nav>
+    <header className={`flex items-center justify-between  ${styles.navbar}`}>
+      <div className={`flex items-center`}>
+        <div className={`${styles.logo} ${styles.title}`}>Zach Gallman</div>
+        <LightSwitch />
       </div>
+      <nav>
+        <div className={` ${styles.menu} ${isMenuOpen ? styles.open : ""}`}>
+          <ul className={` sm:gap-x-0.5 text-white ${styles.menuItems}`}>
+            {menuItems.map(({ url, label }, index) => (
+              <li key={index}>
+                <HeaderNavLink href={url}>{label}</HeaderNavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div
+          className={`flex justify-end ${styles.toggleButton}`}
+          onClick={toggleMenu}
+        >
+          <FaBars />
+        </div>
+      </nav>
     </header>
   );
 };

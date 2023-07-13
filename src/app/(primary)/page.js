@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import AboutMemoji from "../../public/images/AboutMemoji.png";
+import AboutMemoji from "../../../public/images/AboutMemoji.png";
 
 const About = () => {
   const [isExpanded, setIsExpanded] = useState(false);
