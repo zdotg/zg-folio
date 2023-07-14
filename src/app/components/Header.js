@@ -1,6 +1,7 @@
 "use client";
 
 import LightSwitch from "./LightSwitch";
+import Link from "next/link";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 
@@ -9,9 +10,9 @@ import styles from "./Header.module.css"; // Import the CSS module
 
 const menuItems = [
   { label: `Home`, url: `/` },
-  { label: `Portfolio`, url: `zg/portfolio` },
-  { label: `Experience`, url: `zg/experience` },
-  { label: `Contact`, url: `zg/contact` },
+  { label: `Portfolio`, url: `/zg/projects` },
+  { label: `Experience`, url: `/zg/experience/academic` },
+  { label: `Contact`, url: `/zg/contact` },
 ];
 
 const Header = () => {
@@ -24,7 +25,9 @@ const Header = () => {
   return (
     <header className={`flex items-center justify-between  ${styles.navbar}`}>
       <div className={`flex items-center`}>
-        <div className={`${styles.logo} ${styles.title}`}>Zach Gallman</div>
+        <Link href="/" className={`${styles.logo} ${styles.title}`}>
+          Zach Gallman
+        </Link>
         <LightSwitch />
       </div>
       <nav>

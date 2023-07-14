@@ -11,11 +11,6 @@ const PortfolioLayout = ({ children }) => {
                 Projects
               </PortfolioNavLink>
             </li>
-            <li>
-              <PortfolioNavLink href="/dashboard/skills">
-                Skills
-              </PortfolioNavLink>
-            </li>
           </ul>
         </nav>
       </aside>

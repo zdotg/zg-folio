@@ -6,7 +6,6 @@ export default function MainLayout({ children }) {
     <div className="flex flex-col min-h-screen mx-auto max-w-2xl ">
       <div className="flex-grow">
         <Header />
-
         <main className="my-0 ">{children}</main>
       </div>
       <Footer />
