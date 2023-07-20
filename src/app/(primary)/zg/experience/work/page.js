@@ -1,6 +1,6 @@
 const WorkExperience = () => {
   return (
-    <table className="border-none text-black">
+    <table className="border-none text-black bg-white  p-5 dark:bg-slate-800 dark:text-slate-100">
       <thead>
         <tr>
           <th className="border border-none">

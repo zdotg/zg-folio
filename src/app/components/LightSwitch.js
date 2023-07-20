@@ -1,19 +1,15 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useEffect } from "react";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cookies from "universal-cookie";
 
 const LightSwitch = () => {
   const cookies = new Cookies();
-  const [isOpen, setIsOpen] = useState(false);
-  const [icon, setIcon] = useState(faMoon);
-  const [text, setText] = useState("Off");
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const [icon, setIcon] = useState(faMoon);
+  const [text, setText] = useState(" Dark Mode");
 
   useEffect(() => {
     let themeToggle = document.getElementById("themeToggle");
@@ -24,12 +20,12 @@ const LightSwitch = () => {
           htmlClasses.remove("dark");
           cookies.remove("theme");
           setIcon(faMoon);
-          setText("On");
+          setText(" Dark Mode");
         } else {
           htmlClasses.add("dark");
           cookies.set("theme", "dark");
           setIcon(faSun);
-          setText("Off");
+          setText(" Light Mode");
         }
       });
     }
@@ -37,24 +33,22 @@ const LightSwitch = () => {
     if (cookies.get("theme") === "dark") {
       document.querySelector("html").classList.add("dark");
       setIcon(faSun);
-      setText("Switch to Light Mode");
+      setText("Light Mode");
     }
   }, []);
 
   return (
-    <div className="container mx-auto px-4 flex justify-between items-center text-base">
-      <button
-        id="themeToggle"
-        className=" text-gradient py-1 px-2 rounded inline-flex items-center"
-      >
-        <FontAwesomeIcon
-          id="themeIcon"
-          icon={icon}
-          className="mr-2 text-purple-500"
-        />
-        <span className="pl-1">{text}</span>
-      </button>
-    </div>
+    <button
+      id="themeToggle"
+      className=" text-gradient py-1 px-2 rounded inline-flex items-center"
+    >
+      <FontAwesomeIcon
+        id="themeIcon"
+        icon={icon}
+        className="mr-1 text-purple-500"
+      />
+      <span className="pl-2">{text}</span>
+    </button>
   );
 };
 

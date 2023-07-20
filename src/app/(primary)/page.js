@@ -13,10 +13,10 @@ const About = () => {
 
   return (
     <div
-      className="bg-white text-stone-700 p-5 dark:bg-slate-800 dark:text-slate-100"
+      className="bg-white flex-grow overscroll-contain text-stone-700 p-5 dark:bg-slate-800 dark:text-slate-100"
       id="About"
     >
-      <div className="container mx-auto shadow-md">
+      <div className="container mx-auto shadow-md ">
         <div className="flex flex-col lg:flex-row items-center mx-auto max-w-7xl">
           <div className="w-full md:w-1/2 ">
             <Image

@@ -28,11 +28,15 @@ const Header = () => {
         <Link href="/" className={`${styles.logo} ${styles.title}`}>
           Zach Gallman
         </Link>
-        <LightSwitch />
+        <small className="pl-2 pr-4">Web Developer</small>
       </div>
+
       <nav>
+        <LightSwitch />
         <div className={` ${styles.menu} ${isMenuOpen ? styles.open : ""}`}>
-          <ul className={` sm:gap-x-0.5 text-white ${styles.menuItems}`}>
+          <ul
+            className={` sm:gap-x-0.5 text-white text-right ${styles.menuItems}`}
+          >
             {menuItems.map(({ url, label }, index) => (
               <li key={index}>
                 <HeaderNavLink href={url}>{label}</HeaderNavLink>
@@ -41,7 +45,7 @@ const Header = () => {
           </ul>
         </div>
         <div
-          className={`flex justify-end ${styles.toggleButton}`}
+          className={`flex justify-end pr-3 ${styles.toggleButton}`}
           onClick={toggleMenu}
         >
           <FaBars />

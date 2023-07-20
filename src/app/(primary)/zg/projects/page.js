@@ -6,7 +6,7 @@ import Image from "next/image";
 const Projects = () => {
   return (
     <section
-      className="bg-white text-slate-700 dark:bg-slate-800 dark:text-slate-100"
+      className="bg-white text-stone-700 p-5 dark:bg-slate-800 dark:text-slate-100"
       id="Portfolio"
     >
       <div className="container mx-auto px-4 py-10">
